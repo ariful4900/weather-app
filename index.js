@@ -12,11 +12,11 @@ app.use(bodyParser.json());
 
 app.use('/api/history', require('./api/route'))
 
-const dbUser = process.env.DB_USER
-const dbPassword = process.env.DB_PASSWORD
+// const dbUser = process.env.DB_USER
+// const dbPassword = process.env.DB_PASSWORD
 
 
-const url = `mongodb+srv://${dbUser}:${dbPassword}@cluster0.nine7.mongodb.net/weatherAPI?retryWrites=true&w=majority`
+const url = process.env.DB_PATH
 
 const PORT = process.env.DB_PORT || 4444
 app.listen(PORT, ()=>{
